@@ -5,9 +5,12 @@ return {
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
     },
-    config = function(_, ops)
-        local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-        require("dab-python").setup(path)
+    config = function()
+        -- local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+        local path = os.getenv("VIRTUAL_ENV") .. "/bin/python"
+        -- local path = '~/.virtualenvs/debugpy/bin/python'
+        require("dap-python").setup(path)
+        require("dap-python").test_runner = 'pytest'
         vim.keymap.set('n', '<leader>dpr', function()
             require('dap-python').test_method()
         end)

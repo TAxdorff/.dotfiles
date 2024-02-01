@@ -152,6 +152,14 @@ export PATH="$PYENV_ROOT/shims:${PATH}"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# configure VIRTUAL_ENV for pyright/nvim. To use call 'vvim' from cli
+function vvim() {
+    venv_path=$(rg venvPath pyrightconfig.json | awk '{print $NF}' | tr -d '"')
+    venv=$(rg "venv\"" pyrightconfig.json | awk '{print $NF}' | tr -d '"' | tr -d ',')
+    export VIRTUAL_ENV="${venv_path}/${venv}"
+    nvim $1
+}
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
