@@ -121,8 +121,8 @@ alias zshsource="source ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 
 # LS replacement EXA
-alias lsd="exa -a --icons --no-user --no-time"
-alias ls="exa"
+alias lsd="eza -a --icons --no-user --no-time"
+alias ls="eza"
 
 # Git shortcuts
 alias gam="git amend"
@@ -137,12 +137,13 @@ alias gp="git push origin"
 alias gs="git status"
 alias lg="lazygit"
 
-#neovim
+# Neovim
 alias vim="nvim"
 
 #dotfiles repo
 alias dotfiles='/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # pyenv setup
