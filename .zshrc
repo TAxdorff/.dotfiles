@@ -175,3 +175,23 @@ if [ -f '/Users/taxdorff/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/taxdor
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/taxdorff/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/taxdorff/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pnpm
+export PNPM_HOME="/Users/taxdorff/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/taxdorff/.codeium/windsurf/bin:$PATH"
+
+# Add android stuff
+export PATH="/Users/taxdorff/Library/Android/sdk/platform-tools:$PATH"
+export PATH="/Users/taxdorff/Library/Android/sdk/emulator/:$PATH"
+#export PATH="/Users/taxdorff/Library/Android/sdk/:$PATH"
+#export PATH="/Users/taxdorff/Library/Android/sdk/platform-tools:$PATH"
+export ANDROID_HOME="/Users/taxdorff/Library/Android/sdk/"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21/"
